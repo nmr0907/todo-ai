@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/todoapp
+    username: todo
+    password: todo
+  jpa:
+    hibernate:
+      ddl-auto: none # まだスキーマ操作はしない（後でFlywayに任せる想定）
+    open-in-view: false
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.jdbc.core.JdbcTemplate: debug

@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  db:                       # サービス名（ここではdb＝Postgresサーバ）
+    image: postgres:16      # 公式のPostgresイメージを使う。バージョンは16
+    container_name: todo-postgres   # コンテナにつける名前（省略可）
+    environment:            # 環境変数：Postgresに渡す初期設定
+      POSTGRES_USER: todo       # ユーザ名
+      POSTGRES_PASSWORD: todo   # パスワード
+      POSTGRES_DB: todoapp      # 起動時に自動で作るDB名
+    ports:
+      - "5432:5432"         # ホストPCの5432番ポート → コンテナの5432番に接続
